@@ -48,9 +48,12 @@ function PlantQuestAssetMap(props) {
     }
 
     if(pqam.current.started) {
-      pqam.render()
+      // pqam.state.rendered = false
+      pqam.render(() => {})
     }
     else {
+      // force render
+      pqam.state.rendered = false
       pqam.start(options, pqamReady)
     }
   },[options])
