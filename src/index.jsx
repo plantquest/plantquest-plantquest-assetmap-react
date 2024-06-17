@@ -29,9 +29,11 @@ function PlantQuestAssetMap(props) {
       version: Pkg.version,
     }
 
+    window.PLANTQUEST_ASSETMAP_LOG = true
     let pqam = window.PlantQuestAssetMap.make(id)
     
     let pqamReady = (err) => {
+      window.PLANTQUEST_ASSETMAP_LOG = true
       pqam.log('INFO', reactInfo, window.PlantQuestAssetMap.info)
       pqam.info.react = reactInfo
 
@@ -84,6 +86,7 @@ function PlantQuestAssetMap(props) {
   let ACC = assetcluster
 
   let pqam = window.PlantQuestAssetMap.make(id)
+  console.log('pqam', pqam)
   let send = pqam.send.bind(pqam)
   
   return (

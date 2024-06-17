@@ -142,6 +142,8 @@ class App extends React.Component {
   }
   
   componentDidMount() {
+    console.log("Mounting..")
+
     const PQAM = window.PlantQuestAssetMap
     
     // set up message listener
@@ -169,6 +171,7 @@ class App extends React.Component {
       // Listen for "USER SHOW ASSET"
       else if('asset' === msg.show) {
         // use msg.asset
+         this.showAsset(asset)
       }
       
     })
